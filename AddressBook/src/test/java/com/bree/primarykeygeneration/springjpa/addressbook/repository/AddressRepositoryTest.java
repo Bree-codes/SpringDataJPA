@@ -5,6 +5,8 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import java.util.List;
+
 import static com.bree.primarykeygeneration.springjpa.addressbook.entity.Addresses.saved;
 
 @SpringBootTest
@@ -48,4 +50,29 @@ public class AddressRepositoryTest {
         Long id = 1L;
         Addresses addresses = addressRepository.findById(id).get();
     }
+
+    @Test
+    void saveAllMethod(){
+
+        Addresses addresses1 = new Addresses();
+        addresses1.setCity("Nairobi");
+        addresses1.setCountry("Kenya");
+        addresses1.setState("Runda");
+        addresses1.setZip_code("0012");
+
+        Addresses addresses2 = new Addresses();
+        addresses2.setCity("Southern");
+        addresses2.setCountry("Kenya");
+        addresses2.setState("Karen");
+        addresses2.setZip_code("01234");
+
+        Addresses addresses3 = new Addresses();
+        addresses3.setCity("Nakuru");
+        addresses3.setCountry("Kenya");
+        addresses3.setState("Naivasha");
+        addresses3.setZip_code("Naks002");
+
+        addressRepository.saveAll(List.of(addresses1,addresses2,addresses3));
+    }
+    
 }
