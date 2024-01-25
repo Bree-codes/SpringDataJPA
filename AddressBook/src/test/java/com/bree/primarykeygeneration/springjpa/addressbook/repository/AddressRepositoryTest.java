@@ -62,7 +62,7 @@ public class AddressRepositoryTest {
 
         Addresses addresses2 = new Addresses();
         addresses2.setCity("Southern");
-        addresses2.setCountry("Kenya");
+        addresses2.setCountry("Libia");
         addresses2.setState("Karen");
         addresses2.setZip_code("01234");
 
@@ -74,5 +74,15 @@ public class AddressRepositoryTest {
 
         addressRepository.saveAll(List.of(addresses1,addresses2,addresses3));
     }
-    
+
+    @Test
+    void findAllMethod(){
+        List<Addresses> addresses = addressRepository.findAll();
+
+        addresses.forEach((p) ->{
+                    System.out.println(p.getCountry());
+                });
+    }
 }
+
+
