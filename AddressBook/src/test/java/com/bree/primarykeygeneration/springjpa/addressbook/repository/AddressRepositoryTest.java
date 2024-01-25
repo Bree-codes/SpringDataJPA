@@ -30,4 +30,22 @@ public class AddressRepositoryTest {
         System.out.println(saved.toString());
     }
 
+    @Test
+    void updateUsingSaveMethod(){
+        //find the entity by id
+        Long id = 1L;
+        Addresses addresses = addressRepository.findById(id).get();
+
+        //updatethe entity informtion
+        addresses.setState("Texas");
+        addresses.setCity("Warren");
+
+        addressRepository.save(addresses);
+    }
+
+    @Test
+    void findByIdMethod(){
+        Long id = 1L;
+        Addresses addresses = addressRepository.findById(id).get();
+    }
 }
