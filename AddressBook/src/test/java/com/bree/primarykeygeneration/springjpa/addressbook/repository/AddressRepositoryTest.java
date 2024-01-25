@@ -83,6 +83,13 @@ public class AddressRepositoryTest {
                     System.out.println(p.getCountry());
                 });
     }
+
+    @Test
+    void existsByIdMethod(){
+        Long id = 102L;
+        boolean result = addressRepository.existsById(id);
+        System.out.println(result);
+    }
 }
 
 
