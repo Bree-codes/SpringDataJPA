@@ -1,2 +1,2 @@
 # SpringDataJPA
-database connections using Spring boot Data JPA
+database connection using Spring boot Data JPA
